@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- <link rel="stylesheet" href="../static/css/login.css"> -->
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+
+    <title>Login</title>
+</head>
+
+<body>
+    <p id="login-error-popup">Error Here</p>
+    <h1>Expense Tracker</h1>
+    <form id="signup-form" class="hidden" th:action="@{/user/save}" method="post" >
+        <input type="text" name="name" id="name" placeholder="Name: ">
+        <input type="text" name="username" id="username" placeholder="Username: ">
+        <input type="password" name="password" id="password" placeholder="Password: ">
+        <input type="submit" id="submit" value="SignUp">
+    </form>
+    <p id="login-button" class="hidden">Already Have an Account?<a  href="#login"> Login</a></p>
+    <form id="login-form" th:action="@{/login}" method="post">
+        <input type="text" name="username" placeholder="Username: ">
+        <input type="password" name="password" placeholder="Password: ">
+        <input id="login" type="submit" value="Login">
+    </form>
+    <p id="signup-button">Don't Have an Account?<a  href="#signup"> SignUp</a></p>
+
+
+    <script th:if="${param.error}">
+        alert('Invalid Credentials.');
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script th:src="@{/js/error-handling.js}"></script>
+    <script th:src="@{js/login.js}"></script>
+    <!-- <script src="../static/js/login.js"></script> -->
+</body>
+
+</html>

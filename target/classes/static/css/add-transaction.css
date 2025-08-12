@@ -1,0 +1,170 @@
+
+h2{
+    margin: 20px auto;
+    margin-top: 20px;
+
+}
+input{
+    position: relative;
+    padding: 15px;
+    width: 40%;
+    margin: 0 auto;
+    font-size: 0.8em;
+}
+#category{
+    background: #ddd;
+}
+#back-btn{
+    position: relative;
+    width: fit-content;
+    left: 25px;
+    top: 15px;
+    text-decoration: none;
+    font-size: 1.1em;
+    color: black;
+}
+#delete-btn{
+    display: none;
+    position: absolute;
+    width: fit-content;
+    right: 25px;
+    top: 15px;
+    text-decoration: none;
+    color: black;
+}
+#save-btn{
+    margin: 10px auto 10px auto;
+    text-decoration: none;
+    background: green;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    &:hover{
+        background: rgb(4, 179, 4)
+    }
+}
+@media only screen and (max-width: 767px) {
+    #back-btn{
+        font-size: 1.5em;
+    }
+    input{
+        width: 85%;
+        font-size: 1em;
+    }
+}
+.categories a{
+    position: fixed;
+    text-decoration: none;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    color: green;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+}
+.categories{
+    position: fixed;
+    height: 40%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    min-height: 200px;
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    overflow-y: auto;
+    gap: 5px;
+    box-shadow: 0 -5px 10px -5px rgba(0, 0, 0, 0.5);
+    background: #eee;
+    bottom: 0;
+    transition: all 0.1s ease-in-out;
+}
+.categories button{
+    height: 70px;
+    width: 70px;
+    margin: auto;
+    cursor: pointer;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    background: #fff;
+    border-radius: 10px;
+    border: 0;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+        box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+        transform: scale(1.05);
+    }
+}
+.categories button p{
+    margin-top: 5px;
+    color: gray;
+}
+@media only screen and (max-width: 767px) {
+    .categories a{
+        background: #fff;
+    }
+    .categories button{
+        height: 40px;
+        width: 40px;
+        font-size: 0.7em;
+    }
+    .categories button p{
+        position: absolute;
+        margin-top: 55px;
+        z-index: -1;
+    }
+    .categories button img{
+        width: 20px;
+    }
+}
+#error-popup{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    margin: 5px auto;
+    font-size: 0.6em;
+    letter-spacing: 2px;
+    display: none;
+    color: rgb(203, 0, 0);
+    padding: 10px;
+}
+#error-popup.active{
+    display: block;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+form input:nth-child(2){
+    color: green;
+    cursor: default;
+    outline: none;
+}
+form input:last-child{
+    cursor: pointer;
+}
+#checkbox {
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;  
+    justify-content: c;
+}
+#checkbox input {
+    margin-right: 5px;
+    width: fit-content;
+    transform: scale(0.8);
+}
+
